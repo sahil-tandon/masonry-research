@@ -1,0 +1,22 @@
+.grid-item {
+  width: 220px;
+  height: 100px;
+  margin-bottom: 10px;
+
+  display: inline-block;
+}
+.grid-item__width-2 {
+  width: 450px;
+}
+.grid-item__height-2 {
+  height: 210px;
+}
+.grid-item[data-category="black-tiles"] {
+  background: #414a52;
+}
+.grid-item[data-category="blue-tiles"] {
+  background: #86d7c5;
+}
+.grid-item[data-category="yellow-tiles"] {
+  background: #f3c808;
+}
