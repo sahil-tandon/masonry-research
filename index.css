@@ -21,6 +21,10 @@ img {
   height: auto;
 }
 /* App CSS */
+.grid-heading {
+  font-weight: bold;
+  text-align: center;
+}
 .grid {
   max-width: 910px;
   margin: 20px auto;
@@ -43,7 +47,7 @@ img {
   display: flex;
   justify-content: center;
   list-style-type: none;
-  margin-top: 100px;
+  margin: 30px 0 50px 0;
 }
 .grid-filters li {
   border: 1px solid #fff;
