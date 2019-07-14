@@ -16,5 +16,8 @@ $('.grid-item').on('click', function(){
 
 $('.grid-filters li a').click(function(e){
   e.preventDefault();
-  $('.grid').isotope({ filter: $(this).parent('li').data('target') });
+  let $thisParent = $(this).parent();
+  $('.selected').removeClass("selected");
+  $thisParent.addClass("selected");
+  $('.grid').isotope({ filter: $thisParent.data('filter') });
 })
