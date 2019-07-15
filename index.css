@@ -33,6 +33,9 @@ body {
   margin: 0 auto 30px auto;
 }
 .grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 350px;
   height: 105px;
   margin-bottom: 10px;
@@ -53,6 +56,11 @@ body {
 }
 .grid-item[data-category="yellow-tiles"] {
   background: #f3c808;
+}
+.grid-item .tile-logo {
+  font-size: 2rem;
+  color: white;
+  letter-spacing: 0.1rem;
 }
 .grid-filters {
   display: flex;
