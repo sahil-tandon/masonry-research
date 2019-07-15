@@ -42,14 +42,15 @@ body {
   box-shadow: 0 2px 5px 1px rgba(0,0,0,.2);
   border: 1px solid transparent;
   border-radius: 3px;
+  cursor: pointer;
   transition: box-shadow 0.2s ease, border 0.2s ease;
 }
-.grid-item:hover {
+.grid-item:not(.grid-item__open):hover {
   box-shadow: 1px 2px 5px 2px rgba(0,0,0,.3);
   border-color: #000;
 }
 .grid-item[data-category="black-tiles"] {
-  background: #414a52;  
+  background: #414a52;
 }
 .grid-item[data-category="blue-tiles"] {
   background: #86d7c5;
@@ -57,10 +58,14 @@ body {
 .grid-item[data-category="yellow-tiles"] {
   background: #f3c808;
 }
+.grid-item__open {
+  cursor: default;
+}
 .grid-item .tile-logo {
   font-size: 2rem;
   color: white;
   letter-spacing: 0.1rem;
+  pointer-events: none;
 }
 .grid-filters {
   display: flex;
