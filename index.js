@@ -20,4 +20,4 @@ $('.grid-filters li a').click(function(e){
   $('.selected').removeClass("selected");
   $thisParent.addClass("selected");
   $('.grid').isotope({ filter: $thisParent.data('filter') });
-})
+});
