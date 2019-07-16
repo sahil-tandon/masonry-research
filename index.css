@@ -61,36 +61,43 @@ body {
   background: #f3c808;
 }
 .grid-item .tile-logo {
+  display: inline-block;
   font-size: 2rem;  
   letter-spacing: 0.1rem;
   pointer-events: none;
+  padding: 10px 0 0 10px;
 }
 .grid-item .tile-content {
   display: none;
+  margin-top: 40px;
+  font-size: 1rem;
+  padding: 0 10px;
 }
 .grid-item__open {  
   cursor: default;
   display: block;
   height: auto!important;
-  padding: 10px;
   z-index: 2;
 }
 .grid-item__open .tile-content {
   display: block;
-  margin-top: 40px;
-  font-size: 1rem;
 }
-.grid-tile__collapse {  
+.grid-tile__collapse {
+  display: none;
+  float: right;
+  padding: 10px;
+  margin-top: 20px;
+}
+.grid-tile__collapse span {  
   position: relative;
   float: right;
-  display: none;
   cursor: pointer;
   width: 24px;
   height: 24px;
   border: 2px solid #fff;
   margin-top: 10px;
 }
-.grid-tile__collapse:after {
+.grid-tile__collapse span:after {
   content: '';
   position: absolute;
   top: 50%;
