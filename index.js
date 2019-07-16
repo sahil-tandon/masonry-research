@@ -1,5 +1,5 @@
 const isotopeOptions = {
-  itemSelector: '.grid-item',  
+  itemSelector: '.grid-tile',  
 	masonry : {
 		columnWidth: 220,
     gutter: 10,    
@@ -9,12 +9,14 @@ const isotopeOptions = {
 
 $('.grid').isotope(isotopeOptions);
 
-$('.grid-item').on('click', function(){
-  $(this).toggleClass("grid-item__open");
+$('body').on('click', '.grid-tile:not(.grid-tile__open)', function(){
+  $(this).toggleClass("grid-tile__open");
+  $('.grid').isotope(isotopeOptions);  
+});
+
+$('body').on('click', '.grid-tile__collapse', function(){
+  $(this).parent().toggleClass("grid-tile__open");
   $('.grid').isotope(isotopeOptions);
-  // window.setTimeout(() => { 
-  //   $('.grid').isotope(isotopeOptions);
-  // }, 200);
 });
 
 $('.grid-filters li a').click(function(e){
