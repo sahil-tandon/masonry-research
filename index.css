@@ -32,7 +32,7 @@ body {
   width: 350px;
   margin: 0 auto 30px auto;
 }
-.grid-item {
+.grid-tile {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,39 +47,39 @@ body {
   cursor: pointer;
   transition: box-shadow 0.2s ease, border 0.2s ease;
 }
-.grid-item:not(.grid-item__open):hover {
+.grid-tile:not(.grid-tile__open):hover {
   box-shadow: 1px 2px 5px 2px rgba(0,0,0,.3);
   border-color: #000;
 }
-.grid-item[data-category="black-tiles"] {
+.grid-tile[data-category="black-tiles"] {
   background: #414a52;
 }
-.grid-item[data-category="blue-tiles"] {
+.grid-tile[data-category="blue-tiles"] {
   background: #86d7c5;
 }
-.grid-item[data-category="yellow-tiles"] {
+.grid-tile[data-category="yellow-tiles"] {
   background: #f3c808;
 }
-.grid-item .tile-logo {
+.grid-tile .tile-logo {
   display: inline-block;
   font-size: 2rem;  
   letter-spacing: 0.1rem;
   pointer-events: none;
   padding: 10px 0 0 10px;
 }
-.grid-item .tile-content {
+.grid-tile .tile-content {
   display: none;
   margin-top: 40px;
   font-size: 1rem;
   padding: 0 10px;
 }
-.grid-item__open {  
+.grid-tile__open {  
   cursor: default;
   display: block;
   height: auto!important;
   z-index: 2;
 }
-.grid-item__open .tile-content {
+.grid-tile__open .tile-content {
   display: block;
 }
 .grid-tile__collapse {
@@ -116,7 +116,7 @@ body {
 .grid-tile__collapse:hover span:after {
   background: #414a52;
 }
-.grid-item__open .grid-tile__collapse {
+.grid-tile__open .grid-tile__collapse {
   display: inline-block;
 }
 .grid-filters {
@@ -143,14 +143,14 @@ body {
     width: auto;
     max-width: 680px;
   }
-  .grid-item {
+  .grid-tile {
     width: 220px;
   }
-  .grid-item__width-2,
-  .grid-item__open {
+  .grid-tile__width-2,
+  .grid-tile__open {
     width: 450px;
   }
-  .grid-item__height-2 {
+  .grid-tile__height-2 {
     height: 220px;
     min-height: 220px;    
   }
