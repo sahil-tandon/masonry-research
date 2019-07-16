@@ -12,6 +12,9 @@ $('.grid').isotope(isotopeOptions);
 $('.grid-item').on('click', function(){
   $(this).toggleClass("grid-item__open");
   $('.grid').isotope(isotopeOptions);
+  // window.setTimeout(() => { 
+  //   $('.grid').isotope(isotopeOptions);
+  // }, 200);
 });
 
 $('.grid-filters li a').click(function(e){
@@ -19,5 +22,8 @@ $('.grid-filters li a').click(function(e){
   let $thisParent = $(this).parent();
   $('.selected').removeClass("selected");
   $thisParent.addClass("selected");
-  $('.grid').isotope({ filter: $thisParent.data('filter') });
+  window.setTimeout(() => { 
+    $('.grid').isotope({ filter: $thisParent.data('filter') });
+  }, 200);
 });
+
