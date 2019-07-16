@@ -1,8 +1,8 @@
 /* Reset CSS */
 html {
   box-sizing: border-box;
-  font-size: 18px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -38,10 +38,12 @@ body {
   align-items: center;
   width: 350px;
   height: 105px;
+  min-height: 105px;
   margin-bottom: 10px;
   box-shadow: 0 2px 5px 1px rgba(0,0,0,.2);
   border: 1px solid transparent;
   border-radius: 3px;
+  color: #fff;
   cursor: pointer;
   transition: box-shadow 0.2s ease, border 0.2s ease;
 }
@@ -58,14 +60,48 @@ body {
 .grid-item[data-category="yellow-tiles"] {
   background: #f3c808;
 }
-.grid-item__open {
-  cursor: default;
-}
 .grid-item .tile-logo {
-  font-size: 2rem;
-  color: white;
+  font-size: 2rem;  
   letter-spacing: 0.1rem;
   pointer-events: none;
+}
+.grid-item .tile-content {
+  display: none;
+}
+.grid-item__open {  
+  cursor: default;
+  display: block;
+  height: auto!important;
+  padding: 10px;
+  z-index: 2;
+}
+.grid-item__open .tile-content {
+  display: block;
+  margin-top: 40px;
+  font-size: 1rem;
+}
+.grid-tile__collapse {  
+  position: relative;
+  float: right;
+  display: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #fff;
+  margin-top: 10px;
+}
+.grid-tile__collapse:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 2px;
+  background: #fff;
+}
+.grid-item__open .grid-tile__collapse {
+  display: inline-block;
 }
 .grid-filters {
   display: flex;
@@ -100,6 +136,7 @@ body {
   }
   .grid-item__height-2 {
     height: 220px;
+    min-height: 220px;    
   }
 }
 @media only screen and (min-width: 987px) {
