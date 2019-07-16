@@ -87,15 +87,17 @@ body {
   float: right;
   padding: 10px;
   margin-top: 20px;
+  cursor: pointer;
 }
 .grid-tile__collapse span {  
   position: relative;
-  float: right;
-  cursor: pointer;
+  float: right;  
   width: 24px;
   height: 24px;
   border: 2px solid #fff;
   margin-top: 10px;
+  background: transparent;
+  transition: background 0.4s ease;
 }
 .grid-tile__collapse span:after {
   content: '';
@@ -106,6 +108,13 @@ body {
   width: 10px;
   height: 2px;
   background: #fff;
+  transition: background 0.4s ease;
+}
+.grid-tile__collapse:hover span {
+  background: #fff;
+}
+.grid-tile__collapse:hover span:after {
+  background: #414a52;
 }
 .grid-item__open .grid-tile__collapse {
   display: inline-block;
