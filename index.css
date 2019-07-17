@@ -25,11 +25,14 @@ body {
 }
 .grid-heading {
   font-weight: bold;
-  text-align: center;
-  margin-top: 50px;
+  text-align: center;  
+}
+.grid-container {
+  margin: 50px auto 0 auto;
+  max-width: 910px;
 }
 .grid {
-  width: 350px;
+  /* width: 350px; */
   margin: 0 auto 30px auto;
 }
 .grid-tile {
@@ -138,12 +141,9 @@ body {
   padding: 5px 50px;
   color: #414a52;
 }
-@media only screen and (min-width: 757px) {
-  .grid {
-    width: auto;
-    max-width: 680px;
-  }
-  .grid-tile {
+@media only screen and (min-width: 757px) {  
+  .grid-tile,
+  .grid-sizer {
     width: 220px;
   }
   .grid-tile__width-2,
@@ -152,11 +152,6 @@ body {
   }
   .grid-tile__height-2 {
     height: 220px;
-    min-height: 220px;    
-  }
-}
-@media only screen and (min-width: 987px) {
-  .grid {
-    max-width: 910px;
+    min-height: 220px;
   }
 }
