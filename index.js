@@ -1,9 +1,9 @@
 const masonryOptions = {
-  itemSelector: '.grid-tile',  
-	columnWidth: 220,
-  gutter: 10,      
+  itemSelector: '.grid-tile',
+	columnWidth: '.grid-sizer',
+  gutter: 10,
   stagger: 0,
-  fitwidth: true
+  fitWidth: true,
 };
 
 $('.grid').masonry(masonryOptions);
@@ -21,10 +21,13 @@ $('body').on('click', '.grid-tile__collapse', function(){
 $('.grid-filters li a').click(function(e){
   e.preventDefault();
   let $thisParent = $(this).parent();
+  
   $('.selected').removeClass("selected");
   $thisParent.addClass("selected");
+  
   $('.grid-tile').hide();
   $($thisParent.data('filter')).show();
-  $('.grid').masonry(masonryOptions);  
+  
+  $('.grid').masonry(masonryOptions);
 });
 
