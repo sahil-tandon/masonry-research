@@ -10,15 +10,16 @@
 </head>
 
 <body>
-  <div class="grid">
+  <div class="grid-container">
   <p class="grid-heading">FILTER TILES:</p>
   <ul class="grid-filters">
-    <li class="selected" data-target="*"><a href>All</a></li>
+    <li class="selected" data-filter=".grid-tile"><a href>All</a></li>
     <li data-filter=".grid-tile[data-category='black-tiles']"><a href>Black Tiles</a></li>
     <li data-filter=".grid-tile[data-category='blue-tiles']"><a href>Blue Tiles</a></li>
     <li data-filter=".grid-tile[data-category='yellow-tiles']"><a href>Yellow Tiles</a></li>
   </ul>
   <div class="grid">
+    <div class="grid-sizer"></div>
     <div class="grid-tile grid-tile__width-2 grid-tile__height-2" data-category="black-tiles">
       <span class="tile-logo">Tile 1</span>
       <div class="tile-content">
@@ -28,12 +29,24 @@
     </div>
     <div class="grid-tile grid-tile__height-2" data-category="yellow-tiles">
       <span class="tile-logo">Tile 2</span>
+      <div class="tile-content">
+        This is a Black Tile. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non elementum felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et commodo erat, nec malesuada erat. Aenean id urna felis. In hac habitasse platea dictumst. Fusce nulla velit, dictum sed ultricies sed, tempus vitae nunc. Pellentesque tempus quam eros, eget porttitor orci commodo sit amet. Quisque suscipit massa a nulla congue, ut mattis eros rutrum. Aenean gravida scelerisque velit ac iaculis. Mauris porttitor laoreet leo vel semper. Ut vel ullamcorper massa. Mauris nec auctor nisl. Donec sit amet enim eu ipsum ornare sollicitudin.        
+      </div>
+      <div class="grid-tile__collapse"><span></span></div>
     </div>
     <div class="grid-tile" data-category="black-tiles">
       <span class="tile-logo">Tile 3</span>
+      <div class="tile-content">
+        This is a Black Tile. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non elementum felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et commodo erat, nec malesuada erat. Aenean id urna felis. In hac habitasse platea dictumst. Fusce nulla velit, dictum sed ultricies sed, tempus vitae nunc. Pellentesque tempus quam eros, eget porttitor orci commodo sit amet. Quisque suscipit massa a nulla congue, ut mattis eros rutrum. Aenean gravida scelerisque velit ac iaculis. Mauris porttitor laoreet leo vel semper. Ut vel ullamcorper massa. Mauris nec auctor nisl. Donec sit amet enim eu ipsum ornare sollicitudin.        
+      </div>
+      <div class="grid-tile__collapse"><span></span></div>      
     </div>
     <div class="grid-tile" data-category="blue-tiles">
       <span class="tile-logo">Tile 4</span>
+      <div class="tile-content">
+        This is a Black Tile. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non elementum felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et commodo erat, nec malesuada erat. Aenean id urna felis. In hac habitasse platea dictumst. Fusce nulla velit, dictum sed ultricies sed, tempus vitae nunc. Pellentesque tempus quam eros, eget porttitor orci commodo sit amet. Quisque suscipit massa a nulla congue, ut mattis eros rutrum. Aenean gravida scelerisque velit ac iaculis. Mauris porttitor laoreet leo vel semper. Ut vel ullamcorper massa. Mauris nec auctor nisl. Donec sit amet enim eu ipsum ornare sollicitudin.        
+      </div>
+      <div class="grid-tile__collapse"><span></span></div>
     </div>
     <div class="grid-tile" data-category="yellow-tiles">
       <span class="tile-logo">Tile 5</span>
