@@ -1,22 +1,21 @@
-const isotopeOptions = {
+const masonryOptions = {
   itemSelector: '.grid-tile',  
-	masonry : {
-		columnWidth: 220,
-    gutter: 10,    
-  },
-  stagger: 30
+	columnWidth: 220,
+  gutter: 10,      
+  stagger: 0,
+  fitwidth: true
 };
 
-$('.grid').isotope(isotopeOptions);
+$('.grid').masonry(masonryOptions);
 
 $('body').on('click', '.grid-tile:not(.grid-tile__open)', function(){
   $(this).toggleClass("grid-tile__open");
-  $('.grid').isotope(isotopeOptions);  
+  $('.grid').masonry(masonryOptions);  
 });
 
 $('body').on('click', '.grid-tile__collapse', function(){
   $(this).parent().toggleClass("grid-tile__open");
-  $('.grid').isotope(isotopeOptions);
+  $('.grid').masonry(masonryOptions);
 });
 
 $('.grid-filters li a').click(function(e){
@@ -24,8 +23,8 @@ $('.grid-filters li a').click(function(e){
   let $thisParent = $(this).parent();
   $('.selected').removeClass("selected");
   $thisParent.addClass("selected");
-  window.setTimeout(() => { 
-    $('.grid').isotope({ filter: $thisParent.data('filter') });
-  }, 200);
+  $('.grid-tile').hide();
+  $($thisParent.data('filter')).show();
+  $('.grid').masonry(masonryOptions);  
 });
 
