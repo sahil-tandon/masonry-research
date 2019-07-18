@@ -29,10 +29,9 @@ body {
 }
 .grid-container {
   margin: 50px auto 0 auto;
-  max-width: 910px;
+  max-width: 350px;  
 }
-.grid {
-  /* width: 350px; */
+.grid {  
   margin: 0 auto 30px auto;
 }
 .grid-tile {
@@ -46,7 +45,7 @@ body {
   box-shadow: 0 2px 5px 1px rgba(0,0,0,.2);
   border: 1px solid transparent;
   border-radius: 3px;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   transition: box-shadow 0.2s ease, border 0.2s ease;
 }
@@ -56,6 +55,7 @@ body {
 }
 .grid-tile[data-category="black-tiles"] {
   background: #414a52;
+  color: #fff;
 }
 .grid-tile[data-category="blue-tiles"] {
   background: #86d7c5;
@@ -68,13 +68,13 @@ body {
   font-size: 2rem;  
   letter-spacing: 0.1rem;
   pointer-events: none;
-  padding: 10px 0 0 10px;
+  padding: 15px 0 0 15px;
 }
 .grid-tile .tile-content {
   display: none;
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 1rem;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 .grid-tile__open {  
   cursor: default;
@@ -88,8 +88,7 @@ body {
 .grid-tile__collapse {
   display: none;
   float: right;
-  padding: 10px;
-  margin-top: 20px;
+  padding: 15px;
   cursor: pointer;
 }
 .grid-tile__collapse span {  
@@ -97,8 +96,7 @@ body {
   float: right;  
   width: 24px;
   height: 24px;
-  border: 2px solid #fff;
-  margin-top: 10px;
+  border: 2px solid #000;
   background: transparent;
   transition: background 0.4s ease;
 }
@@ -110,13 +108,25 @@ body {
   transform: translate(-50%, -50%);
   width: 10px;
   height: 2px;
-  background: #fff;
+  background: #000;
   transition: background 0.4s ease;
 }
-.grid-tile__collapse:hover span {
+.grid-tile[data-category="black-tiles"] .grid-tile__collapse span {
+  border-color: #fff;
+}
+.grid-tile[data-category="black-tiles"] .grid-tile__collapse span:after {
   background: #fff;
 }
+.grid-tile__collapse:hover span {
+  background: #000;
+}
 .grid-tile__collapse:hover span:after {
+  background: #fff;
+}
+.grid-tile[data-category="black-tiles"] .grid-tile__collapse:hover span {
+  background: #fff;
+}
+.grid-tile[data-category="black-tiles"] .grid-tile__collapse:hover span:after {
   background: #414a52;
 }
 .grid-tile__open .grid-tile__collapse {
@@ -141,7 +151,10 @@ body {
   padding: 5px 50px;
   color: #414a52;
 }
-@media only screen and (min-width: 757px) {  
+@media only screen and (min-width: 515px) {
+  .grid-container {
+    max-width: 910px;
+  }
   .grid-tile,
   .grid-sizer {
     width: 220px;
