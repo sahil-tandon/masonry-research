@@ -1,5 +1,4 @@
 /** @component : masonry grid layout */
-
 .grid-container {
   margin: 0 auto;
   @include respond-above(515px) {
@@ -22,18 +21,18 @@
       flex: 1;
       max-width: 150px;
       margin: 0 5px;
-      border: 1px solid #fff;
+      border: 1px solid $color-white;
       text-align: center;
       transition: 0.2s ease;
     }
     li.selected {
-      border-color: #414a52;
+      border-color: $color-mako;
     }
     li a {
       display: block;
       text-decoration: none;
       padding: 5px;
-      color: #414a52;
+      color: $color-mako;
     }
   }
 
@@ -70,7 +69,7 @@
   align-items: center;  
   height: 105px;
   margin-bottom: 10px;
-  color: #000;
+  color: $color-black;
   cursor: pointer;
   border-radius: 3px;
   border: 1px solid transparent;
@@ -78,7 +77,7 @@
   transition: box-shadow 0.2s ease, border 0.2s ease;
   &:not(.grid-tile__open):hover {
     box-shadow: 1px 2px 5px 2px rgba(0,0,0,.3);
-    border-color: #000;
+    border-color: $color-black;
   }
 
   .tile-logo {
@@ -106,7 +105,7 @@
       float: right;  
       width: 24px;
       height: 24px;
-      border: 2px solid #000;
+      border: 2px solid $color-black;
       background: transparent;
       transition: background 0.4s ease;
     }
@@ -118,14 +117,14 @@
       transform: translate(-50%, -50%);
       width: 10px;
       height: 2px;
-      background: #000;
+      background: $color-black;
       transition: background 0.4s ease;
     }
     &:hover span {
-      background: #000;
+      background: $color-black;
     }
     &:hover span:after {
-      background: #f3c808;
+      background: $color-corn;
     }
   }
 }
@@ -145,30 +144,30 @@
 
 .grid-tile {
   &.grid-tile[data-category="black-tiles"] {
-    background: #414a52;
-    color: #fff;
+    background: $color-mako;
+    color: $color-white;
     .tile-collapse span {
-      border-color: #fff;
+      border-color: $color-white;
     }
     .tile-collapse span:after {
-      background: #fff;
+      background: $color-white;
     }
     .tile-collapse:hover span {
-      background: #fff;
+      background: $color-white;
     }
     .tile-collapse:hover span:after {
-      background: #414a52;
+      background: $color-mako;
     }    
   }
 
   &.grid-tile[data-category="blue-tiles"] {
-    background: #86d7c5;
+    background: $color-bermuda;
     .tile-collapse:hover span:after {
-      background: #86d7c5;
+      background: $color-bermuda;
     }
   }
 
   &.grid-tile[data-category="yellow-tiles"] {
-    background: #f3c808;
+    background: $color-corn;
   }
 }
