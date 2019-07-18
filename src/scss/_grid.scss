@@ -1,4 +1,4 @@
-/** @masonry grid layout component */
+/** @component : masonry grid layout */
 
 .grid-container {
   margin: 0 auto;
@@ -31,8 +31,29 @@
     }
   }
 
+  .grid {
+    margin: 0 auto;
+  }
+
   .grid-sizer {
     width: 350px;
+    @include respond-above(515px) {
+      width: 220px;
+    }
+  }
+
+  .grid-tile {
+    width: 350px;
+    @include respond-above(515px) {
+      width: 220px;
+      &.grid-tile__width-2,
+      &.grid-tile__open {
+        width: 450px;
+      }
+      &.grid-tile__height-2 {
+        height: 220px;
+      }
+    }
   }
 }
 
@@ -40,8 +61,7 @@
 .grid-tile {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 350px;
+  align-items: center;  
   height: 105px;
   margin-bottom: 10px;
   color: #000;
@@ -49,21 +69,12 @@
   border-radius: 3px;
   border: 1px solid transparent;
   box-shadow: 0 2px 5px 1px rgba(0,0,0,.2);
-  transition: box-shadow 0.2s ease, border 0.2s ease;  
-  &.grid-tile[data-category="black-tiles"] {
-    background: #414a52;
-    color: #fff;
-  }
-  &.grid-tile[data-category="blue-tiles"] {
-    background: #86d7c5;
-  }
-  &.grid-tile[data-category="yellow-tiles"] {
-    background: #f3c808;
-  }
+  transition: box-shadow 0.2s ease, border 0.2s ease;
   &:not(.grid-tile__open):hover {
     box-shadow: 1px 2px 5px 2px rgba(0,0,0,.3);
     border-color: #000;
   }
+
   .tile-logo {
     display: inline-block;
     font-size: 2rem;
@@ -71,81 +82,87 @@
     pointer-events: none;
     padding: 15px 0 0 15px;
   }
+
   .tile-content {
     display: none;
     margin-top: 20px;
     font-size: 1rem;
     padding: 0 15px;
   }
+
   .tile-collapse {
     display: none;
     float: right;
     padding: 15px;
     cursor: pointer;
-  }
-  .tile-collapse span {  
-    position: relative;
-    float: right;  
-    width: 24px;
-    height: 24px;
-    border: 2px solid #000;
-    background: transparent;
-    transition: background 0.4s ease;
-  }
-  .tile-collapse span:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 2px;
-    background: #000;
-    transition: background 0.4s ease;
+    span {  
+      position: relative;
+      float: right;  
+      width: 24px;
+      height: 24px;
+      border: 2px solid #000;
+      background: transparent;
+      transition: background 0.4s ease;
+    }
+    span:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 2px;
+      background: #000;
+      transition: background 0.4s ease;
+    }
+    &:hover span {
+      background: #000;
+    }
+    &:hover span:after {
+      background: #f3c808;
+    }
   }
 }
 
 .grid-tile.grid-tile__open {  
+  display: block;
   cursor: default;
   height: auto!important;
   z-index: 2;
   .tile-collapse {
     display: inline-block;
-  } 
-}
-
-
-
-.grid-tile[data-category="black-tiles"] .tile-collapse span {
-  border-color: #fff;
-}
-.grid-tile[data-category="black-tiles"] .tile-collapse span:after {
-  background: #fff;
-}
-.tile-collapse:hover span {
-  background: #000;
-}
-.tile-collapse:hover span:after {
-  background: #fff;
-}
-.grid-tile[data-category="black-tiles"] .tile-collapse:hover span {
-  background: #fff;
-}
-.grid-tile[data-category="black-tiles"] .tile-collapse:hover span:after {
-  background: #414a52;
-}
-
-@media only screen and (min-width: 515px) {  
-  .grid-tile,
-  .grid-sizer {
-    width: 220px;
   }
-  .grid-tile__width-2,
-  .grid-tile__open {
-    width: 450px;
+  .tile-content {
+    display: block;
   }
-  .grid-tile__height-2 {
-    height: 220px;
-    min-height: 220px;
+}
+
+.grid-tile {
+  &.grid-tile[data-category="black-tiles"] {
+    background: #414a52;
+    color: #fff;
+    .tile-collapse span {
+      border-color: #fff;
+    }
+    .tile-collapse span:after {
+      background: #fff;
+    }
+    .tile-collapse:hover span {
+      background: #fff;
+    }
+    .tile-collapse:hover span:after {
+      background: #414a52;
+    }    
+  }
+
+  &.grid-tile[data-category="blue-tiles"] {
+    background: #86d7c5;
+    .tile-collapse:hover span:after {
+      background: #86d7c5;
+    }
+  }
+
+  &.grid-tile[data-category="yellow-tiles"] {
+    background: #f3c808;
   }
 }
