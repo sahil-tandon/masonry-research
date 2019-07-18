@@ -13,7 +13,7 @@ $('body').on('click', '.grid-tile:not(.grid-tile__open)', function(){
   $('.grid').masonry(masonryOptions);  
 });
 
-$('body').on('click', '.grid-tile__collapse', function(){
+$('body').on('click', '.tile-collapse', function(){
   $(this).parent().toggleClass("grid-tile__open");
   $('.grid').masonry(masonryOptions);
 });

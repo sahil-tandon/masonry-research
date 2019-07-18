@@ -21,18 +21,20 @@ img {
 }
 /* App CSS */
 body {
-  padding: 0 20px;
+  padding: 50px 20px 20px 20px;
 }
 .grid-heading {
   font-weight: bold;
   text-align: center;  
 }
 .grid-container {
-  margin: 50px auto 0 auto;
-  max-width: 350px;  
+  margin: 0 auto;
 }
 .grid {  
   margin: 0 auto 30px auto;
+}
+.grid-sizer {
+  width: 350px;
 }
 .grid-tile {
   display: flex;
@@ -85,13 +87,13 @@ body {
 .grid-tile__open .tile-content {
   display: block;
 }
-.grid-tile__collapse {
+.tile-collapse {
   display: none;
   float: right;
   padding: 15px;
   cursor: pointer;
 }
-.grid-tile__collapse span {  
+.tile-collapse span {  
   position: relative;
   float: right;  
   width: 24px;
@@ -100,7 +102,7 @@ body {
   background: transparent;
   transition: background 0.4s ease;
 }
-.grid-tile__collapse span:after {
+.tile-collapse span:after {
   content: '';
   position: absolute;
   top: 50%;
@@ -111,25 +113,25 @@ body {
   background: #000;
   transition: background 0.4s ease;
 }
-.grid-tile[data-category="black-tiles"] .grid-tile__collapse span {
+.grid-tile[data-category="black-tiles"] .tile-collapse span {
   border-color: #fff;
 }
-.grid-tile[data-category="black-tiles"] .grid-tile__collapse span:after {
+.grid-tile[data-category="black-tiles"] .tile-collapse span:after {
   background: #fff;
 }
-.grid-tile__collapse:hover span {
+.tile-collapse:hover span {
   background: #000;
 }
-.grid-tile__collapse:hover span:after {
+.tile-collapse:hover span:after {
   background: #fff;
 }
-.grid-tile[data-category="black-tiles"] .grid-tile__collapse:hover span {
+.grid-tile[data-category="black-tiles"] .tile-collapse:hover span {
   background: #fff;
 }
-.grid-tile[data-category="black-tiles"] .grid-tile__collapse:hover span:after {
+.grid-tile[data-category="black-tiles"] .tile-collapse:hover span:after {
   background: #414a52;
 }
-.grid-tile__open .grid-tile__collapse {
+.grid-tile__open .tile-collapse {
   display: inline-block;
 }
 .grid-filters {
