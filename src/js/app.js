@@ -1,4 +1,4 @@
-const masonryOptions = {
+var masonryOptions = {
   itemSelector: '.grid-tile',
 	columnWidth: '.grid-sizer',
   gutter: 10,
