@@ -4,8 +4,8 @@
     itemSelector: '.grid-tile',
     columnWidth: '.grid-sizer',
     gutter: 10,
-    stagger: 0,
-    fitWidth: true,
+    stagger: 10,
+    fitWidth: true
   }
 
   $('.grid').masonry(masonryOptions);

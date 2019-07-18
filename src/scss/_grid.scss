@@ -7,6 +7,7 @@
   }
   
   .grid-heading {
+    font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
   }
@@ -14,19 +15,24 @@
   .grid-filters {
     display: flex;
     justify-content: center;
+    align-items: center;
     list-style-type: none;
-    margin: 30px 0 50px 0;
+    margin: 30px auto 50px auto;
     li {
+      flex: 1;
+      max-width: 150px;
+      margin: 0 5px;
       border: 1px solid #fff;
+      text-align: center;
       transition: 0.2s ease;
     }
     li.selected {
       border-color: #414a52;
     }
     li a {
-      display: inline-block;
+      display: block;
       text-decoration: none;
-      padding: 5px 50px;
+      padding: 5px;
       color: #414a52;
     }
   }
