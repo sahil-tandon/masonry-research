@@ -9,12 +9,12 @@ var masonryOptions = {
 $('.grid').masonry(masonryOptions);
 
 $('body').on('click', '.grid-tile:not(.grid-tile__open)', function(){
-  $(this).toggleClass("grid-tile__open");
+  $(this).addClass("grid-tile__open");
   $('.grid').masonry(masonryOptions);  
 });
 
 $('body').on('click', '.tile-collapse', function(){
-  $(this).parent().toggleClass("grid-tile__open");
+  $(this).parent().removeClass("grid-tile__open");
   $('.grid').masonry(masonryOptions);
 });
 
